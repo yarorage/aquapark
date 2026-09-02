@@ -144,7 +144,21 @@ a.member:hover { transform: translateY(-8px); background: rgba(255,255,255,.06);
 .video:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.35); }
 .video-embed { aspect-ratio: 16/9; position: relative; background: #000; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.video.large .video-embed { aspect-ratio: 16/9; }
+.video.large.swapping-out { animation: videoOut .22s ease-in forwards; }
+.video.large.entering { animation: videoIn .45s cubic-bezier(.22,.61,.36,1); }
+@keyframes videoIn {
+  from { opacity: 0; transform: scale(.97) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes videoOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(.97) translateY(-6px); }
+}
+.video-thumbs .video.small { animation: thumbIn .35s cubic-bezier(.22,.61,.36,1); }
+@keyframes thumbIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .video-cap { padding: 14px 18px; font-weight: 700; font-size: 15px; }
 .video-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .video.small { cursor: pointer; }

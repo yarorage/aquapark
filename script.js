@@ -137,9 +137,9 @@
     const prevId = vidData(currentIFrame.src);
     const prevTitle = currentBig.querySelector(".video-cap").textContent;
 
-    // Строим большим выбранное видео
+    // Строим большим выбранное видео (скрыто до конца fade-out)
     const newBig = document.createElement("figure");
-    newBig.className = "video large";
+    newBig.className = "video large entering";
     newBig.id = "bigVideo";
     newBig.innerHTML =
       '<div class="video-embed">' + makePlayer(v, t) + "</div><figcaption class='video-cap'></figcaption>";
@@ -148,8 +148,24 @@
     // Строим маленькое превью из прежнего большого
     const newSmall = makeThumb(prevId, prevTitle);
 
-    // Меняем местами: большой уходит в thumbs, выбранный thumb становится большим
-    currentBig.replaceWith(newBig);
-    thumbEl.replaceWith(newSmall);
+    // Плавная смена: сначала fade-out старого, затем обмен DOM и fade-in нового
+    let moved = false;
+    function doSwap() {
+      if (moved) return;
+      moved = true;
+      currentBig.replaceWith(newBig);
+      thumbEl.replaceWith(newSmall);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        newBig.classList.remove("entering");
+      }));
+    }
+
+    if (currentBig.classList.contains("swapping-out")) {
+      doSwap();
+    } else {
+      currentBig.classList.add("swapping-out");
+      // после fade-out .22s меняем местами
+      setTimeout(doSwap, 240);
+    }
   });
 })();
