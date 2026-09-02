@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>аквапарк — музыкальная группа</title>
+<meta name="description" content="аквапарк — московская инди-рок группа. Светлая меланхолия, гитарный инди-поп и панк-романтика. Слушайте на Яндекс Музыке." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<canvas id="waves"></canvas>
+
+<div class="noise"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">аква<b>парк</b></a>
+    <nav class="menu">
+      <a href="#about">О группе</a>
+      <a href="#music">Музыка</a>
+      <a href="#members">Участники</a>
+      <a href="#media">Медиа</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener" class="btn btn-ym">Слушать ↗</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">московская инди-рок группа · с 2022</p>
+      <h1 class="title">аква<span class="accent">парк</span></h1>
+      <p class="subtitle">
+        Гитарный инди-поп про радости, горести, взросление и любовь.
+        Светлая меланхолия — и лёгкая панк-романтика.
+      </p>
+      <div class="hero-cta">
+        <a href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener" class="btn btn-primary btn-big">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="ic"><path d="M8 5v14l11-7z"/></svg>
+          Слушать на Яндекс Музыке
+        </a>
+        <a href="#media" class="btn btn-ghost btn-big">Смотреть клипы</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>100к+</b><span>слушателей в месяц</span></div>
+        <div class="stat"><b>2022</b><span>год основания</span></div>
+        <div class="stat"><b>1</b><span>аквапарк и только</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">листай<br><span>↓</span></div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">о группе</span>
+        <h2>Мы — <span class="accent">аквапарк</span>!</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            <b>аквапарк</b> — яркие представители московской независимой сцены,
+            создающие самобытный гитарный инди-рок. Музыканты умело балансируют
+            между светлой меланхолией и лёгкой панк-романтикой.
+          </p>
+          <p>
+            Наше творчество — про радости и горести человеческого бытия,
+            про взросление и любовь. Винтажное звучание, отсылающее к группе
+            «Браво» и околобритпоповой волне русской музыки нулевых, — и в то же
+            время наш, собственный, узнаваемый голос.
+          </p>
+          <p>
+            Мы — победители опен-колла от фестиваля «Близость» и сервиса
+            BandLink Music, постоянные участники российских инди-фестивалей.
+            Наша музыка наполнена светлой меланхолией и духом юности.
+          </p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-item">
+            <span class="about-label">жанр</span>
+            <span class="about-val">инди-рок / инди-поп</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-label">откуда</span>
+            <span class="about-val">Москва, Россия</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-label">активны с</span>
+            <span class="about-val">2022 года</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-label">настроение</span>
+            <span class="about-val">светлая меланхолия × панк-романтика</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MUSIC ================= -->
+  <section class="music section" id="music">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">музыка</span>
+        <h2>Треки, которые <span class="accent">стоит любить</span></h2>
+      </div>
+
+      <div class="tracklist">
+        <div class="track">
+          <div class="track-num">01</div>
+          <div class="track-info"><b>луна</b><span>сингл</span></div>
+          <div class="track-eq"><i></i><i></i><i></i><i></i><i></i></div>
+          <a class="track-more" href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener">Яндекс Музыка ↗</a>
+        </div>
+        <div class="track">
+          <div class="track-num">02</div>
+          <div class="track-info"><b>закрой окно</b><span>сингл</span></div>
+          <div class="track-eq"><i></i><i></i><i></i><i></i><i></i></div>
+          <a class="track-more" href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener">Яндекс Музыка ↗</a>
+        </div>
+        <div class="track">
+          <div class="track-num">03</div>
+          <div class="track-info"><b>зачем укрылось солнце</b><span>сингл</span></div>
+          <div class="track-eq"><i></i><i></i><i></i><i></i><i></i></div>
+          <a class="track-more" href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener">Яндекс Музыка ↗</a>
+        </div>
+        <div class="track">
+          <div class="track-num">04</div>
+          <div class="track-info"><b>отсутствие света</b><span>сингл</span></div>
+          <div class="track-eq"><i></i><i></i><i></i><i></i><i></i></div>
+          <a class="track-more" href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener">Яндекс Музыка ↗</a>
+        </div>
+        <div class="track">
+          <div class="track-num">05</div>
+          <div class="track-info"><b>я бегу</b><span>ft. ГИЛТИ</span></div>
+          <div class="track-eq"><i></i><i></i><i></i><i></i><i></i></div>
+          <a class="track-more" href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener">Яндекс Музыка ↗</a>
+        </div>
+      </div>
+
+      <div class="music-cta">
+        <a href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener" class="btn btn-primary btn-big">Весь диск в Яндекс Музыке</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MEMBERS ================= -->
+  <section class="members section" id="members">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">участники</span>
+        <h2>Кто делает <span class="accent">этот шум</span></h2>
+      </div>
+      <div class="members-grid">
+        <div class="member">
+          <div class="avatar" style="--h:200deg;--bg:#0ff0;--c:rgba(64,224,208,1)">К</div>
+          <div class="member-body">
+            <h3>Ковер</h3>
+            <p>вокал · гитара</p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="avatar" style="--h:220deg;--bg:#f0f0;--c:rgba(173,216,230,1)">С</div>
+          <div class="member-body">
+            <h3>Сандич</h3>
+            <p>гитара · бэк-вокал</p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="avatar" style="--h:240deg;--bg:#0f00;--c:rgba(152,251,152,1)">Б</div>
+          <div class="member-body">
+            <h3>Бас</h3>
+            <p>бас-гитара</p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="avatar" style="--h:260deg;--bg:#ff00;--c:rgba(255,240,150,1)">У</div>
+          <div class="member-body">
+            <h3>Ударные</h3>
+            <p>барабаны</p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="avatar" style="--h:280deg;--bg:#00f0;--c:rgba(255,182,193,1)">Кл</div>
+          <div class="member-body">
+            <h3>Клавиши</h3>
+            <p>синтезаторы</p>
+          </div>
+        </div>
+      </div>
+      <p class="members-note">* Состав и псевдонимы участников регулярно объявляются в официальных соцсетях группы — загляните к нам в Telegram и ВК.</p>
+    </div>
+  </section>
+
+  <!-- ================= MEDIA ================= -->
+  <section class="media section" id="media">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">медиа</span>
+        <h2>Клипы & <span class="accent">фото</span></h2>
+      </div>
+
+      <div class="videos">
+        <div class="video">
+          <a href="https://www.youtube.com/@akvapaark" target="_blank" rel="noopener">
+            <div class="video-thumb"><span class="play">▶</span></div>
+            <div class="video-cap">зачем укрылось солнце</div>
+          </a>
+        </div>
+        <div class="video">
+          <a href="https://www.youtube.com/@akvapaark" target="_blank" rel="noopener">
+            <div class="video-thumb"><span class="play">▶</span></div>
+            <div class="video-cap">я бегу (ft. ГИЛТИ)</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <figure class="photo"><span class="ph ph1"></span></figure>
+        <figure class="photo"><span class="ph ph2"></span></figure>
+        <figure class="photo"><span class="ph ph3"></span></figure>
+        <figure class="photo"><span class="ph ph4"></span></figure>
+        <figure class="photo"><span class="ph ph5"></span></figure>
+        <figure class="photo"><span class="ph ph6"></span></figure>
+      </div>
+
+      <p class="media-more">Больше клипов и свежих фото — в наших соцсетях ниже.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / CTA ================= -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <h2>Погружайся в <span class="accent">аквапарк</span></h2>
+        <p>Слушай, смотри и следи за нами. Только у нас, только сегодня!</p>
+        <div class="contact-links">
+          <a href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener" class="btn btn-primary btn-big">Яндекс Музыка</a>
+          <a href="https://vk.com/waterparkk" target="_blank" rel="noopener" class="btn btn-ghost btn-big">ВКонтакте</a>
+          <a href="https://t.me/aquapacani" target="_blank" rel="noopener" class="btn btn-ghost btn-big">Telegram</a>
+          <a href="https://band.link/aquapark" target="_blank" rel="noopener" class="btn btn-ghost btn-big">BandLink</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="logo">аква<b>парк</b></div>
+    <p>© <span id="year"></span> музыкальная группа «аквапарк». Сайт сделан с любовью к музыке.</p>
+    <div class="footer-links">
+      <a href="https://music.yandex.ru/artist/18647391" target="_blank" rel="noopener">Яндекс Музыка</a>
+      <a href="https://vk.com/waterparkk" target="_blank" rel="noopener">ВК</a>
+      <a href="https://t.me/aquapacani" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://www.youtube.com/@akvapaark" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox"><button class="lb-close">✕</button><img alt="превью" /></div>
+
+<script src="script.js"></script>
+</body>
+</html>
