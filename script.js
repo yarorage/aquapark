@@ -76,36 +76,17 @@
   );
 })();
 
-// Lightbox for gallery (real photos from socials can be added via data-img)
+// Lightbox for gallery (real photos from socials)
 (function () {
   const lb = document.getElementById("lightbox");
   const img = lb.querySelector("img");
   const close = lb.querySelector(".lb-close");
   const photos = document.querySelectorAll(".photo");
-  const palettes = [
-    "#2c9bbd,#0f3d5e", "#43e6c9,#1b6a7a", "#ff7aa8,#7a2f5a",
-    "#7ee0ff,#1d4e8f", "#2c9bbd,#7a2f5a", "#1b6a7a,#0f3d5e"
-  ];
-  photos.forEach((ph, i) => {
+  photos.forEach((ph) => {
     ph.addEventListener("click", () => {
-      const real = ph.dataset.img;
-      if (real) {
-        img.src = real;
-      } else {
-        const [a, b] = palettes[i % palettes.length].split(",");
-        const label = ["у нас на репетиции", "за кулисами", "на сцене", "live-сет", "стрит", "после концерта"][i % 6];
-        img.src =
-          "data:image/svg+xml;utf8," +
-          encodeURIComponent(
-            `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'>` +
-            `<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>` +
-            `<stop offset='0' stop-color='${a}'/><stop offset='1' stop-color='${b}'/></linearGradient></defs>` +
-            `<rect width='800' height='600' fill='url(#g)'/>` +
-            `<text x='50%' y='50%' font-family='Arial' font-size='30' fill='#fff' text-anchor='middle'>аквапарк</text>` +
-            `<text x='50%' y='58%' font-family='Arial' font-size='20' fill='rgba(255,255,255,.8)' text-anchor='middle'>&mdash; ${label} &mdash;</text>` +
-            `</svg>`
-          );
-      }
+      const bg = ph.querySelector(".ph").style.backgroundImage;
+      const m = bg.match(/url\(["']?(.+?)["']?\)/);
+      img.src = m ? m[1] : "media/telegram-cover.jpg";
       lb.classList.add("open");
     });
   });
