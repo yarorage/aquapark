@@ -86,7 +86,7 @@
     ph.addEventListener("click", () => {
       const bg = ph.querySelector(".ph").style.backgroundImage;
       const m = bg.match(/url\(["']?(.+?)["']?\)/);
-      img.src = m ? m[1] : "media/telegram-cover.jpg";
+      img.src = m ? m[1] : "media/fotos/photo_2024-07-19_20-34-51.jpg";
       lb.classList.add("open");
     });
   });
@@ -96,5 +96,60 @@
   });
 })();
 
-// Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+// Video swap: клик по маленькому видео меняет его местами с большим (оно становится большим и воспроизводится)
+(function () {
+  const thumbsWrap = document.querySelector(".video-thumbs");
+
+  function vidData(src) {
+    const m = src.match(/embed\/([a-zA-Z0-9_-]{11})/);
+    return m ? m[1] : "r74AuFF2B7c";
+  }
+
+  function makePlayer(id, title) {
+    return (
+      '<iframe id="mainPlayer" src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="' + title + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+    );
+  }
+
+  function makeThumb(id, title) {
+    var fig = document.createElement("figure");
+    fig.className = "video small";
+    fig.dataset.video = id;
+    fig.dataset.title = title;
+    fig.innerHTML =
+      '<button class="video-pick" aria-label="Смотреть ' + title + '">' +
+      '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="' + title + '" loading="lazy" />' +
+      '<span class="video-playbadge">▶</span>' +
+      "</button><figcaption class='video-cap'></figcaption>";
+    return fig;
+  }
+
+  // Делегирование кликов по всем маленьким видео (в том числе создаваемым динамически)
+  thumbsWrap.addEventListener("click", function (e) {
+    const thumbEl = e.target.closest(".video.small");
+    if (!thumbEl) return;
+    const v = thumbEl.dataset.video;
+    const t = thumbEl.dataset.title;
+    if (!v) return;
+
+    const currentBig = document.getElementById("bigVideo");
+    const currentIFrame = currentBig.querySelector("iframe");
+    const prevId = vidData(currentIFrame.src);
+    const prevTitle = currentBig.querySelector(".video-cap").textContent;
+
+    // Строим большим выбранное видео
+    const newBig = document.createElement("figure");
+    newBig.className = "video large";
+    newBig.id = "bigVideo";
+    newBig.innerHTML =
+      '<div class="video-embed">' + makePlayer(v, t) + "</div><figcaption class='video-cap'></figcaption>";
+    newBig.querySelector(".video-cap").textContent = t;
+
+    // Строим маленькое превью из прежнего большого
+    const newSmall = makeThumb(prevId, prevTitle);
+
+    // Меняем местами: большой уходит в thumbs, выбранный thumb становится большим
+    currentBig.replaceWith(newBig);
+    thumbEl.replaceWith(newSmall);
+  });
+})();
