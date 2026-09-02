@@ -131,7 +131,7 @@ b { font-weight: 800; }
 .members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; margin-bottom: 26px; }
 .member { background: var(--panel); border: 1px solid var(--panel-line); border-radius: var(--radius); padding: 30px 22px; text-align: center; transition: transform .3s, background .3s; }
 .member:hover { transform: translateY(-8px); background: rgba(255,255,255,.06); }
-.avatar { width: 92px; height: 92px; margin: 0 auto 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: 800; font-size: 28px; color: var(--c); background: radial-gradient(circle at 30% 30%, var(--bg), transparent 70%); border: 2px solid var(--c); box-shadow: 0 0 30px var(--c); }
+.member-photo { width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid rgba(67,230,201,.5); box-shadow: 0 0 30px rgba(67,230,201,.25); background: var(--panel); }
 .member h3 { font-size: 20px; font-family: var(--font-head); font-weight: 600; }
 .member p { color: var(--muted); font-size: 14px; margin-top: 6px; }
 .members-tip { color: var(--muted); font-size: 15px; text-align: center; margin-top: 26px; font-weight: 600; }
